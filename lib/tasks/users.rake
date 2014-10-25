@@ -1,10 +1,10 @@
 namespace :users do
-  desc "Getting all product hunt users"
+  desc "Getting all ProductHunt users"
   task hunt: :environment do
     
   end
 
-  desc "Getting users locations from twitter"
+  desc "Getting users locations from Twitter"
   task locations: :environment do
     
   end
