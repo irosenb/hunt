@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026001252) do
+ActiveRecord::Schema.define(version: 20141026164947) do
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "username"
-    t.string   "hunt_id"
-    t.string   "integer"
+    t.integer  "hunt_id",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "hunted_at"
   end
 
 end

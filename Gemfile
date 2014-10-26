@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 
 gem 'awesome_print'
 gem 'pry'
+gem 'smarter_csv'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
