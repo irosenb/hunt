@@ -6,8 +6,13 @@ namespace :users do
   		headers:{
   			"Authorization" => "Bearer #{ENV["ph_dev_token"]}",
   		}
-
   	puts response.body
+  
+  end
+
+  task :locations do
+
+  	
 
   end
 
