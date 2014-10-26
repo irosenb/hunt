@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'twitter'
-gem 'unirest'
 gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -30,8 +29,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'geokit'
 gem 'unicorn'
-gem ''
-
 gem 'unirest'
 
 # Use ActiveModel has_secure_password
