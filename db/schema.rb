@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20141026190354) do
     t.integer  "hunt_id",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "hunted_at"
     t.string   "location"
+    t.datetime "hunted_at"
     t.float    "latitude"
     t.float    "longitude"
   end

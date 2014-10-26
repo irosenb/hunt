@@ -28,4 +28,5 @@ namespace :users do
         end
       end
     end
+  end
 end
