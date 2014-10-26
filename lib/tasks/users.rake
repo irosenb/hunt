@@ -10,26 +10,18 @@ namespace :users do
   end
 
   task locations: :environment do
-
   	users = User.all
-  	tw_usernames = Array.new()
-  	
-  	users.each_with_index do |user, i|
-  		tw_usernames.push(user.username)
-
-  		if (i+1 % 100) != 0 || i+1 != users.length
-  			tw_usernames_q = tw_usernames.join(",")
-			tw_users = TW_CLIENT.users(tw_usernames_q)
-
-			tw_users.each do |tw_user|
-				user.location = tw_user.location
-				user.save
-			end
-
-  			tw_usernames.clear
-  		end
+    users.map(&:username).each_slice(100).to_a.each do |group|
+      puts twis = group.join(",")
+      tw_users = TW_CLIENT.users(twis)
+      tw_users.each do |tw_user|
+        puts tw_user.screen_name
+        user = User.where("lower(username) = ?", tw_user.screen_name.downcase).first
+        location = Geokit::Geocoders::MultiGeocoder.geocode(tw_user.location)
+        user.latitude = location.latitude
+        user.longitude = location.longitude
+        puts user.save!
+      end
+    end
 	end
-
-  end
-
 end
