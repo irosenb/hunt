@@ -31,8 +31,9 @@ gem 'spring',        group: :development
 gem 'geokit'
 gem 'unicorn'
 gem 'unirest'
+gem 'gon' 
 
-gem 'awesome_print'
+gem 'awesome_print', group: :development
 gem 'pry'
 gem 'smarter_csv'
 
