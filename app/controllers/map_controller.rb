@@ -12,8 +12,7 @@ class MapController < ApplicationController
              coordinates: [user.longitude, user.latitude]
            },
            properties: {
-            title: user.name,
-            description: user.username
+            title: "<a href='http://twitter.com/#{user.username}'>#{user.name}</a>"
        }
       }
       end

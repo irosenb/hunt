@@ -4,32 +4,3 @@
   Built for <a href='http://producthunt.com/' target='_blank'>Product Hunt</a>.
   Created by <a href='https://twitter.com/irosenb/' target='_blank'>@irosenb</a> and <a href='https://twitter.com/coultonvento/'>@coultonvento</a>.
 </div>
-
-<script>
-  L.mapbox.accessToken = 'pk.eyJ1IjoiY291bHRvbnZlbnRvIiwiYSI6ImZGVVkzWTgifQ.jP4KGmxaZT5mHuIHHcrNEg';
-  var map = L.mapbox.map('map', '', { zoomControl: false, minZoom : 2, maxZoom : 15 })
-     .setView([36.597889, -53.789063], 2)
-     .addLayer(L.mapbox.tileLayer('coultonvento.k26eeaal'));
-
-  var geojson = <%= @json.to_json.html_safe %>
-
-  var featureLayer = L.mapbox.featureLayer(geojson);
-  var clusterGroup = new L.MarkerClusterGroup();
-  featureLayer.eachLayer(function(layer) {
-      clusterGroup.addLayer(layer);
-  });
-  map.addLayer(clusterGroup);
-
-  clusterGroup.on('clusterclick', function(ev) {
-      var markers = ev.layer.getAllChildMarkers();
-      var markersTitles = Array();
-      for (var i = 0; i < markers.length; i++) {
-          var marker = markers[i];
-          markersTitles.push(marker.options.title);
-      }
-      if (markersTitles.length > 0) {
-          alert(markersTitles.join('\n'));
-      }
-  });
-   
-</script>
