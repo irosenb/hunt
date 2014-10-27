@@ -7,14 +7,14 @@
 
 <script>
   L.mapbox.accessToken = 'pk.eyJ1IjoiY291bHRvbnZlbnRvIiwiYSI6ImZGVVkzWTgifQ.jP4KGmxaZT5mHuIHHcrNEg';
-  var map = L.mapbox.map('map')
+  var map = L.mapbox.map('map', '', { zoomControl: false, minZoom : 2, maxZoom : 15 })
      .setView([36.597889, -53.789063], 2)
      .addLayer(L.mapbox.tileLayer('coultonvento.k26eeaal'));
-     
+
   var geojson = <%= @json.to_json.html_safe %>
 
   var featureLayer = L.mapbox.featureLayer(geojson);
-  var clusterGroup = new L.MarkerClusterGroup({ zoomToBoundsOnClick: false });
+  var clusterGroup = new L.MarkerClusterGroup();
   featureLayer.eachLayer(function(layer) {
       clusterGroup.addLayer(layer);
   });
