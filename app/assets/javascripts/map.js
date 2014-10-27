@@ -35,7 +35,7 @@ $(document).ready(function($) {
       for (var i = 0; i < markers.length; i++) {
         var marker = markers[i];
         console.log(marker.options);
-        markersTitles.push(marker.options.title);
+        markersTitles.push(marker.feature.properties.title);
       }
       ev.layer.zoomToBounds();
       if (map.getZoom() == map.getMaxZoom()) {
