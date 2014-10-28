@@ -29,4 +29,10 @@ namespace :users do
       end
     end
   end
+
+  task retrieve: :environment do
+    ActiveRecord::Base.transaction do
+      
+    end
+  end
 end
