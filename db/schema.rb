@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026190354) do
+ActiveRecord::Schema.define(version: 20141101014734) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "username"
-    t.integer  "hunt_id",    limit: 255
+    t.integer  "hunt_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
     t.datetime "hunted_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "product_link"
   end
 
 end

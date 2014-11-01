@@ -32,7 +32,11 @@ namespace :users do
 
   task retrieve: :environment do
     ActiveRecord::Base.transaction do
-      
+      users = User.where.not(latitude: nil)
+      users.map(&:username).each do |name|
+        response = Unirest.get "https://api.producthunt.com/v1/users/#{name}", headers: { "Authorization" => "Bearer #{ENV["ph_dev_token"]}" }
+        puts response.body["user"]["maker_of"]["redirect_url"]
+      end
     end
   end
 end
