@@ -36,6 +36,8 @@ gem 'gon'
 gem 'awesome_print', group: :development
 gem 'pry'
 gem 'smarter_csv'
+gem "typhoeus"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
