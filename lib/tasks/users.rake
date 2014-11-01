@@ -18,15 +18,8 @@ namespace :users do
 
   task get: :environment do
     ActiveRecord::Base.transaction do
-      SmarterCSV.process("./lib/users.csv", {:col_sep => ";", :quote_char => ";", :key_mapping => {:name => :name, :username => :username, :id => :hunt_id, :created_at => :hunted_at, :maker_of_count => :maker_count}, :remove_unmapped_keys => true}) do |chunk| 
-        chunk.each do |i|
-          maker = i[:maker_count] || 0
-          if maker.to_i > 0 
-            i.delete(:maker_count)
-            User.create(chunk)
-          end
-        end
-      end
+      get_users {|chunk, i| puts chunk.first["name"]}
+      # User.create(chunk)
     end
   end
 
@@ -42,3 +35,16 @@ namespace :users do
     end
   end
 end
+
+def get_users
+  SmarterCSV.process("./lib/users.csv", {:col_sep => ";", :quote_char => ";", :key_mapping => {:name => :name, :username => :username, :id => :hunt_id, :created_at => :hunted_at, :maker_of_count => :maker_count, :image => :image}, :remove_unmapped_keys => true}) do |chunk| 
+    chunk.each do |i|
+      maker = i[:maker_count] || 0
+      if maker.to_i > 0
+        i.delete(:maker_count)
+        yield(chunk, i) if block_given? 
+      end
+    end    
+  end
+end
+

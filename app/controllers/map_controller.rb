@@ -12,9 +12,12 @@ class MapController < ApplicationController
              coordinates: [user.longitude, user.latitude]
            },
            properties: {
+            name: user.name,
+            username: user.username,
+            # product: user.products.first,
             title: "<a target='_blank' href='http://twitter.com/#{user.username}'>#{user.name}</a>"
-       }
-      }
+          }
+        }
       end
     end
 
