@@ -28,6 +28,17 @@ a:hover {
 
 }
 
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	
+	#footer {
+		width: 90%;
+		margin-bottom: 7px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	}
+}
+
 #header {
 	position: absolute;
 	width: 100%;
