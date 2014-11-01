@@ -35,7 +35,10 @@ namespace :users do
       users = User.where.not(latitude: nil)
       users.map(&:username).each do |name|
         response = Unirest.get "https://api.producthunt.com/v1/users/#{name}", headers: { "Authorization" => "Bearer #{ENV["ph_dev_token"]}" }
-        puts response.body["user"]["maker_of"]["redirect_url"]
+        binding.pry
+        puts link = response.body["user"]["maker_of"].first["redirect_url"]
+        user.product_link = link
+        puts user.save  
       end
     end
   end
