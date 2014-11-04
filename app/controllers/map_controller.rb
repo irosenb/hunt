@@ -14,7 +14,7 @@ class MapController < ApplicationController
            properties: {
             name: user.name,
             username: user.username,
-            # product: user.products.first,
+            product: user.products.first.to_json,
             title: "<a target='_blank' href='http://twitter.com/#{user.username}'>#{user.name}</a>"
           }
         }
@@ -23,6 +23,7 @@ class MapController < ApplicationController
 
     respond_to do |format|
       format.html 
+      format.js
       format.json { render json: @json } 
     end
   end
