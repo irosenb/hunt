@@ -1,8 +1,7 @@
 <% @users.each do |user| %>
 	<div class="person">
-		 	
-		<%= link_to(user.product.first.name, user.product.first.link) %>
-		<!-- <a href="<%= user.product.first.link %>"></a> -->
-		<a target='_blank' href='http://twitter.com/<%= user.username %>'><%= user.name %></a> 
-	</div>	
+		<%= link_to user.products.first.name, user.products.first.link %>
+	 	 by 
+		<%= link_to user.name, "http://twitter.com/#{user.username}" %>
+	</div>
 <% end %>
