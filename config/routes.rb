@@ -1,3 +1,6 @@
+# [CJL] I personally like to clean this file out and leave it nice and clean.
+#       Since the site is only 1 page right now, you only need the 'root' route.
+
 Rails.application.routes.draw do
   get 'map/show'
 

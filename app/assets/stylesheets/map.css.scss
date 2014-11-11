@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// [CJL] I see tabs here in your styling instead of spaces.
+//
+// Make sure you have "Tabs = Spaces" in your text editor.
+// This makes code reviews in GitHub consistent and nicer.
+
 body {
 	color: #fff;
 	font-family: 'Open Sans', sans-serif;
@@ -32,6 +37,17 @@ a:hover {
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 	
+	#footer {
+		width: 90%;
+		margin-bottom: 7px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	}
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
 	#footer {
 		width: 90%;
 		margin-bottom: 7px;
