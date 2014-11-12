@@ -13,7 +13,7 @@ namespace :users do
   end
 
   task get_products: :environment do
-    User.connection
+    # User.connection
     User.get_products
   end
 end
