@@ -1,7 +1,6 @@
 class MapController < ApplicationController
   def index
     @users = User.includes(:products).where.not(latitude: nil)
-    # @products = Product.all
     @json = []
 
     @users.each do |user|
@@ -24,7 +23,7 @@ class MapController < ApplicationController
     respond_to do |format|
       format.html 
       format.js
-      format.json { render json: @json } 
+      format.json
     end
   end
 

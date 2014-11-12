@@ -34,10 +34,12 @@ gem 'unicorn'
 gem 'unirest'
 gem 'gon' 
 
-gem 'awesome_print', group: :development
+gem 'awesome_print', group: [:development, :test]
 gem 'pry'
 gem 'smarter_csv'
 gem "typhoeus"
+gem 'json_spec', group: :test
+
 
 
 # Use ActiveModel has_secure_password
