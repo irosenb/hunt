@@ -15,11 +15,15 @@ a:hover {
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
-	padding: 0px 0px 11px 15px;
+	padding: 0px 0px 11px 0px;
 	text-align: left;
 	font-size: 13px; 
 	font-weight: 300;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+	#built {
+		padding-left: 15px;
+	}
 
 	a:link, a:active, a:visited, a:hover {
 		color: #fff;
@@ -27,6 +31,11 @@ a:hover {
 	}
 
 }
+
+a:link, a:active, a:visited, a:hover {
+		color: #fff;
+		text-decoration: none;
+	}
 
 @media only screen 
 and (min-device-width : 320px) 
@@ -50,4 +59,9 @@ and (max-device-width : 480px) {
 	font-size: 24px;
 	font-weight: 600;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+	
+	a {
+		float: right;
+		margin-right: 10px;
+	}
 }
