@@ -32,18 +32,13 @@ a:hover {
 
 }
 
-a:link, a:active, a:visited, a:hover {
-		color: #fff;
-		text-decoration: none;
-	}
-
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 	
 	#footer {
 		width: 90%;
-		margin-bottom: 7px;
+		margin-bottom: 1em;
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 	}
 }
