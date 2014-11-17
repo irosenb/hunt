@@ -40,6 +40,10 @@ gem 'smarter_csv'
 gem "typhoeus"
 gem 'json_spec', group: :test
 
+gem 'rack-mini-profiler', group: :development
+gem 'actionpack-action_caching'
+gem "bullet", :group => "development"
+
 
 
 # Use ActiveModel has_secure_password

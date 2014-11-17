@@ -1,4 +1,6 @@
 class MapController < ApplicationController
+  caches_action :index 
+
   def index
     @users = User.includes(:products).where.not(latitude: nil)
     
